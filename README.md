@@ -5,7 +5,7 @@ A simple Client Project Tracker developed for a digital agency to manage client 
 ## Technologies Used
 
 Frontend:
-Laravel Blade (Including :HTML,CSS,JavaScript,Bootstrap)
+- Laravel Blade (Including :HTML,CSS,JavaScript,Bootstrap)
 
 Backend:
 - Laravel
