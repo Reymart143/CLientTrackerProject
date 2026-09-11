@@ -79,7 +79,7 @@ You may use XAMPP, Laragon, or another local PHP/MySQL environment.
 Open a terminal or command prompt and run:
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Reymart143/CLientTrackerProject
 ```
 
 Example:
@@ -103,6 +103,7 @@ composer install
 ```
 
 ### 4. Create the MySQL Database
+There is project.sql file in the github you need to downlaod it. 
 
 Open phpMyAdmin, MySQL Workbench, or the MySQL command line and create the database:
 
