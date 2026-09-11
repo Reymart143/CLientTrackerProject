@@ -103,7 +103,7 @@ composer install
 ```
 
 ### 4. Create the MySQL Database
-There is project.sql file in the github you need to downlaod it. 
+There is **project.sql** file in the github you need to downlaod it. 
 
 Open phpMyAdmin, MySQL Workbench, or the MySQL command line and create the database:
 
