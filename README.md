@@ -59,10 +59,12 @@ The application validates the following:
 - Priority must be valid
 - Due Date cannot be earlier than Start Date
 - Invalid requests return meaningful validation errors
+# Client Project Tracker
 
 ## Setup and Installation
 
 ### Requirements
+
 Before running the project, make sure the following are installed:
 
 - PHP
@@ -73,25 +75,24 @@ Before running the project, make sure the following are installed:
 You may use XAMPP, Laragon, or another local PHP/MySQL environment.
 
 ### 1. Clone the Repository
+
 Open a terminal or command prompt and run:
+
 ```bash
 git clone YOUR_GITHUB_REPOSITORY_URL
 ```
-Replace `YOUR_GITHUB_REPOSITORY_URL` with the actual GitHub repository URL.
 
 Example:
 
 ```bash
-git clone https://github.com/yourusername/client-project-tracker.git
+git clone https://github.com/Reymart143/ClientTrackerProject.git
 ```
 
 ### 2. Open the Project Directory
 
 ```bash
-cd ClientTracker
+cd ClientTrackerProject
 ```
-
-Change `ClientTracker` if your project folder has a different name.
 
 ### 3. Install PHP Dependencies
 
@@ -101,64 +102,45 @@ Run:
 composer install
 ```
 
-### 4. Create the Environment File
+### 4. Create the MySQL Database
 
-For Windows Command Prompt:
-
-```bash
-copy .env.example .env
-```
-
-For macOS/Linux:
-
-```bash
-cp .env.example .env
-```
-
-### 5. Generate the Laravel Application Key
-
-Run:
-
-```bash
-php artisan key:generate
-```
-
-### 6. Create the MySQL Database
-
-Open phpMyAdmin, MySQL Workbench, or the MySQL command line and create a database.
-
-Example:
+Open phpMyAdmin, MySQL Workbench, or the MySQL command line and create the database:
 
 ```sql
 CREATE DATABASE projects;
 ```
 
-### 7. Configure the Database
+### 5. Import the Database
 
-Open the `.env` file and update the database configuration:
-Defaul is : 
+A SQL database file is included in the repository.
+
+Using phpMyAdmin:
+
+1. Open phpMyAdmin.
+2. Create or select the `projects` database.
+3. Click the **Import** tab.
+4. Select the provided `.sql` file from the project repository.
+5. Click **Import** or **Go**.
+6. Wait for the import to complete successfully.
+
+The imported database contains the required tables and initial data for the application.
+
+### 6. Database Configuration
+
+The included `.env` file is already configured with the following default local database settings:
+
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=client_project_tracker
+DB_DATABASE=projects
 DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Update `DB_USERNAME` and `DB_PASSWORD` according to your local MySQL configuration.
+If your local MySQL configuration is different, update the database settings in the `.env` file.
 
-### 8. Run the Database Migrations
-
-Run:
-
-```bash
-php artisan migrate
-```
-
-This will create the required database tables.
-
-### 9. Clear Laravel Cache
+### 7. Clear Laravel Cache
 
 Run:
 
@@ -166,7 +148,7 @@ Run:
 php artisan optimize:clear
 ```
 
-### 10. Start the Laravel Development Server
+### 8. Start the Laravel Development Server
 
 Run:
 
@@ -184,7 +166,7 @@ Open the URL in your web browser.
 
 ## Running the Application
 
-After the initial setup, you normally only need to start your MySQL service and run:
+After the initial setup, start your MySQL service and run:
 
 ```bash
 php artisan serve
@@ -194,12 +176,19 @@ Then visit:
 
 ```text
 http://127.0.0.1:8000/login
+```
 
-## Login DEFAULT CREDENTIALS
-- username: admin
-- password : 123
+## Default Login Credentials
+
+Use the following credentials to access the application:
+
+```text
+Username: admin
+Password: 123
+```
 
 ## Dashboard
+
 The dashboard displays project statistics including:
 
 - Total Projects
@@ -211,17 +200,29 @@ The dashboard displays project statistics including:
 - Medium Priority
 - High Priority
 
+## Project Features
+
+The application includes:
+
+- Create Project
+- View Project
+- Edit Project
+- Delete Project
+- Search Projects
+- Filter by Status
+- Filter by Priority
+- Sort Projects
+- Pagination
+- Project Dashboard
+- Client-side validation
+- Server-side validation
+
 ## Troubleshooting
+
 If you encounter Laravel cache or configuration issues, run:
 
 ```bash
 php artisan optimize:clear
-```
-
-If the database tables do not exist, run:
-
-```bash
-php artisan migrate
 ```
 
 If PHP dependencies are missing, run:
@@ -230,18 +231,29 @@ If PHP dependencies are missing, run:
 composer install
 ```
 
-If the application key is missing, run:
+If the application key is missing or invalid, run:
 
 ```bash
 php artisan key:generate
 ```
 
+If you encounter a database connection error, verify that:
+
+- MySQL is running.
+- The `projects` database exists.
+- The SQL file was imported successfully.
+- The database credentials in `.env` match your local MySQL configuration.
+
 ## AI Tool Disclosure
 
-AI-assisted development tools is (CHAT GPT) were used during the development process for development assistance,specially in format for javascript since i did not memorize all format in javascript and also grammar in documentations.
+ChatGPT was used as an AI-assisted development tool during the development of this project.
 
-The generated suggestions were reviewed, tested, modified where necessary, and integrated into the final application by the developer.
+It was primarily used for development assistance, particularly for JavaScript syntax and formatting that I do not always memorize, as well as for grammar and documentation improvements.
+
+All AI-generated suggestions were reviewed, tested, modified where necessary, and integrated into the final application by the developer.
+
 ## Submission
 
-The repository contains the source code and setup instructions required to run the Client Project Tracker locally.
-Make sure the GitHub repository is publicly accessible before submitting the repository link through the official application form.
+This repository contains the source code, database file, and setup instructions required to run the Client Project Tracker locally.
+
+The repository is publicly accessible for review.
