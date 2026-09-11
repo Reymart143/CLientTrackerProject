@@ -187,37 +187,6 @@ Use the following credentials to access the application:
 Username: admin
 Password: 123
 ```
-
-## Dashboard
-
-The dashboard displays project statistics including:
-
-- Total Projects
-- Planning
-- In Progress
-- On Hold
-- Completed
-- Low Priority
-- Medium Priority
-- High Priority
-
-## Project Features
-
-The application includes:
-
-- Create Project
-- View Project
-- Edit Project
-- Delete Project
-- Search Projects
-- Filter by Status
-- Filter by Priority
-- Sort Projects
-- Pagination
-- Project Dashboard
-- Client-side validation
-- Server-side validation
-
 ## Troubleshooting
 
 If you encounter Laravel cache or configuration issues, run:
