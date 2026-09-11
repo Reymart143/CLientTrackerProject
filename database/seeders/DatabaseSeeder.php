@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
             'role' => '0',
             'username' => 'admin',
             'email' => 'default@gmail.com',
-            'phone_no' => 'default'
+            'phone_no' => 'default',
+            'password' => '123',
          ]);
     }
     

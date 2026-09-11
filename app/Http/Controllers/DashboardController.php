@@ -8,34 +8,29 @@ use App\Models\UserSetting;
 use DB;
 class DashboardController extends Controller
 {
+   
     public function Dashboard(Request $request){
         $settings = null;
         if(Auth::check()){
-            $monthlyRla = DB::table('lf_06_02')
-            ->selectRaw('MONTH(created_at) as month')
-            ->selectRaw('COUNT(*) as total_rla')
-            ->selectRaw('SUM(CASE WHEN status = 8 THEN 1 ELSE 0 END) as total_release')
-            ->groupByRaw('MONTH(created_at)')
-            ->orderByRaw('MONTH(created_at)')
-            ->get();
+            // dd('da');
+            $totalProjects = DB::table('projects')->count();
+            $planningProjects = DB::table('projects')->where('status', '0')->count();
+            $inProgressProjects = DB::table('projects')->where('status', '1')->count();
+            $onHoldProjects = DB::table('projects')->where('status', '2')->count();
+            $completedProjects = DB::table('projects')->where('status', '3')->count();
+            $lowPriorityProjects = DB::table('projects')->where('priority', '0')->count();
+            $mediumPriorityProjects = DB::table('projects')->where('priority', '1')->count();
+            $highPriorityProjects = DB::table('projects')->where('priority', '2')->count();
 
-            $months = [];
-            $totalRla = [];
-            $totalRelease = [];
-
-            foreach (range(1, 12) as $month) {
-                $record = $monthlyRla->firstWhere('month', $month);
-
-                $months[] = date('M', mktime(0, 0, 0, $month, 1));
-                $totalRla[] = $record ? (int) $record->total_rla : 0;
-                $totalRelease[] = $record ? (int) $record->total_release : 0;
-            }
-
-        $settings = UserSetting::where('user_id', Auth::id())->first();
-        return view('dashboard.dashboard', compact(
-                'months',
-                'totalRla',
-                'totalRelease'
+            return view('dashboard.dashboard', compact(
+                    'totalProjects',
+                    'planningProjects',
+                    'inProgressProjects',
+                    'onHoldProjects',
+                    'completedProjects',
+                    'lowPriorityProjects',
+                    'mediumPriorityProjects',
+                    'highPriorityProjects'
             ));
     }else{
         Auth::logout();

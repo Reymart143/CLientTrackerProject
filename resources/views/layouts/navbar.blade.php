@@ -1,4 +1,4 @@
-    @if(session('success') && !request()->routeIs('equipments.*'))
+    @if(session('success'))
       <div class="mb-3 alert alert-left alert-success alert-dismissible fade show auto-dismiss"
          role="alert"
          style="position: fixed; top: 20px; right: 20px; z-index: 9999;">
@@ -11,7 +11,7 @@
       @endif
 
 
-    @if(session('error') && !request()->routeIs('equipments.*'))
+    @if(session('error'))
       <div class="mb-3 alert alert-bottom alert-danger alert-dismissible fade show auto-dismiss"
          role="alert"
          style="position: fixed; top: 20px; right: 20px; z-index: 9999;">
@@ -33,30 +33,7 @@
 
  <nav class="nav navbar navbar-expand-lg navbar-light iq-navbar">
           <div class="container-fluid navbar-inner">
-            <a href="../dashboard/index.html" class="navbar-brand">
-                
-                  <div class="logo-main">
-                    <div class="logo-normal" >
-                        <img src="{{url('assets/images/bfarlogo.png')}}" 
-                            alt="BFAR Logo" 
-                            class="img-fluid" style="width: 90px;margin-left:5mm">
-                    </div>
-                    <div class="logo-mini" >
-                        <img src="{{url('assets/images/bfarlogo.png')}}" 
-                            alt="BFAR Logo" 
-                            class="img-fluid" style="width: 90px;margin-left:5mm">
-                    </div>
-                </div>
-                <!--logo End-->
-                
-                
-                
-              <div class="text-center">
-                    <h4 class="logo-title mb-1">BFAR</h4>
-                    <span class="badge bg-primary p-2" style="margin-left:5mm">Region XII</span>
-                </div>
-
-            </a>
+        
             <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
                 <i class="icon">
                  <svg  width="20px" class="icon-20" viewBox="0 0 24 24">
@@ -143,14 +120,14 @@
             </div>
           </div>
         </nav>          <!-- Nav Header Component Start -->
-          <div class="iq-navbar-header" style="height: 215px;">
-              <div class="container-fluid iq-container">
+          <div class="iq-navbar-header" style="height: 150px;">
+              <div class="container-fluid iq-container bg-primary">
                   <div class="row">
                       <div class="col-md-12">
                           <div class="flex-wrap d-flex justify-content-between align-items-center">
                               <div>
-                                  <h1>LIMS</h1>
-                                  <p>Laboratory Information Management System</p>
+                                  <h1>Client Project Tracker</h1>
+                                 
                               </div>
                               <div>
                                   {{-- <a href="" class="btn btn-link btn-soft-light">
@@ -165,7 +142,7 @@
                       </div>
                   </div>
               </div>
-              <div class="iq-header-img">
+              <div class="iq-header-img" id="topHeaderImage">
                   <img src="{{url('assets/images/dashboard/top-header.png')}}" alt="header" class="theme-color-default-img img-fluid w-100 h-100 animated-scaleX">
                   <img src="{{url('assets/images/dashboard/top-header1.png')}}" alt="header" class="theme-color-purple-img img-fluid w-100 h-100 animated-scaleX">
                   <img src="{{url('assets/images/dashboard/top-header2.png')}}" alt="header" class="theme-color-blue-img img-fluid w-100 h-100 animated-scaleX">
@@ -173,6 +150,18 @@
                   <img src="{{url('assets/images/dashboard/top-header4.png')}}" alt="header" class="theme-color-yellow-img img-fluid w-100 h-100 animated-scaleX">
                   <img src="{{url('assets/images/dashboard/top-header5.png')}}" alt="header" class="theme-color-pink-img img-fluid w-100 h-100 animated-scaleX">
               </div>
-          </div>          <!-- Nav Header Component End -->
+             <script>
+                document.addEventListener("DOMContentLoaded", function(){
+
+                    let currentPath = window.location.pathname;
+
+                    if(currentPath.includes('/Dashboard')){
+                        document.getElementById('topHeaderImage').style.display = 'none';
+                    }
+
+                });
+                </script>
+               
+          </div>    
         <!--Nav End-->
       </div>
