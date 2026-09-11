@@ -256,5 +256,6 @@ All AI-generated suggestions were reviewed, tested, modified where necessary, an
 ## Submission
 
 This repository contains the source code, database file, and setup instructions required to run the Client Project Tracker locally.
-
 The repository is publicly accessible for review.
+
+Please feel free to message or email me if you encounter any issues. Thank you!
