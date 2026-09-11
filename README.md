@@ -220,7 +220,7 @@ ChatGPT was used as an AI-assisted development tool during the development of th
 
 It was primarily used for development assistance, particularly for JavaScript syntax and formatting that I do not always memorize, as well as for grammar and documentation improvements.
 
-All AI-generated suggestions were reviewed, tested, modified where necessary, and integrated into the final application by the developer.
+Also all AI-generated suggestions were reviewed, tested, modified where necessary, and integrated into the final application by the me as developer.
 
 ## Submission
 
